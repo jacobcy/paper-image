@@ -1,0 +1,2 @@
+- [Frontend Demo Phase](project_frontend_demo.md) — React/Next.js 15 frontend, 8 modules, 31 issues, started 2026-06-01
+- [Agent Dispatch Workflow](user_agent_dispatch.md) — User prefers spec-first then agent execution per issue
