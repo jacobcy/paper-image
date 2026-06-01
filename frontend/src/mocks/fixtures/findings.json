@@ -1,0 +1,55 @@
+[
+  {
+    "id": "finding_001",
+    "level": "near_duplicate",
+    "score": 0.94,
+    "algorithm": "pHash+CLIP",
+    "message": "Panel similarity detected between submission Fig.3B and reference article Fig.2A",
+    "targetPanel": {
+      "panelId": "panel_t_001",
+      "figureId": "fig_t_003",
+      "articleId": "article_target_001",
+      "imagePath": "/static/panels/panel_t_001.png",
+      "label": "B",
+      "scope": "submission"
+    },
+    "sourcePanel": {
+      "panelId": "panel_r_002",
+      "figureId": "fig_r_002",
+      "articleId": "article_ref_001",
+      "imagePath": "/static/panels/panel_r_002.png",
+      "label": "A",
+      "scope": "public"
+    },
+    "heatmapPath": null,
+    "overlayPath": "/static/overlays/overlay_001.png",
+    "modelVersion": "clip-vit-large-patch14",
+    "parameters": { "threshold": 0.9, "method": "cosine" },
+    "reviewStatus": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  {
+    "id": "finding_002",
+    "level": "possible_manipulation",
+    "score": 0.76,
+    "algorithm": "TruFor-fake",
+    "message": "Potential splicing artifact detected in submission Fig.5A (FAKE — model not connected)",
+    "targetPanel": {
+      "panelId": "panel_t_005",
+      "figureId": "fig_t_005",
+      "articleId": "article_target_001",
+      "imagePath": "/static/panels/panel_t_005.png",
+      "label": "A",
+      "scope": "submission"
+    },
+    "sourcePanel": null,
+    "heatmapPath": "/static/heatmaps/heatmap_002_FAKE.png",
+    "overlayPath": null,
+    "modelVersion": "fake-analyzer-v0",
+    "parameters": { "note": "FAKE output — real model not connected" },
+    "reviewStatus": "pending",
+    "reviewedBy": null,
+    "reviewedAt": null
+  }
+]

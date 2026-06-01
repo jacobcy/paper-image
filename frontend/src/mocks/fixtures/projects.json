@@ -1,0 +1,36 @@
+[
+  {
+    "id": "proj_a1b2c3d4e5f6g7h8",
+    "name": "Nature Methods 2024 Submission",
+    "description": "Pre-submission integrity check",
+    "status": "ready",
+    "targetPdf": {
+      "id": "pdf_target_001",
+      "filename": "submission_draft_v3.pdf",
+      "fileSize": 8245760,
+      "role": "target",
+      "source": "upload",
+      "uploadProgress": 100,
+      "processingStatus": "completed",
+      "figureCount": 12,
+      "panelCount": 34,
+      "uploadedAt": "2026-06-01T10:00:00Z"
+    },
+    "referencePdfs": [
+      {
+        "id": "pdf_ref_001",
+        "filename": "Chen2023_NatureComm.pdf",
+        "fileSize": 5120000,
+        "role": "reference",
+        "source": "upload",
+        "uploadProgress": 100,
+        "processingStatus": "completed",
+        "figureCount": 8,
+        "panelCount": 22,
+        "uploadedAt": "2026-06-01T10:05:00Z"
+      }
+    ],
+    "createdAt": "2026-06-01T09:55:00Z",
+    "updatedAt": "2026-06-01T11:00:00Z"
+  }
+]
