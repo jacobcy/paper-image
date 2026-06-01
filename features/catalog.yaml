@@ -1,0 +1,224 @@
+# Feature catalog for paper-image.
+#
+# Purpose:
+# - keep work split by module and milestone
+# - avoid one giant "pipeline" task
+# - make future issue creation mechanical
+
+version: 1
+
+domains:
+  - id: core
+    name: Core truth and orchestration
+  - id: extraction
+    name: PDF, figure, and panel extraction
+  - id: analysis
+    name: Feature, search, verification, and forensic analysis
+  - id: review
+    name: Reporting and human review
+  - id: quality
+    name: Evaluation and module discipline
+
+modules:
+  - id: core/corpus
+    domain: core
+  - id: core/storage
+    domain: core
+  - id: core/config
+    domain: core
+  - id: core/jobs
+    domain: core
+  - id: core/ai
+    domain: core
+  - id: extract/pdf
+    domain: extraction
+  - id: extract/panel
+    domain: extraction
+  - id: extract/normalization
+    domain: extraction
+  - id: features/hash
+    domain: analysis
+  - id: features/embedding
+    domain: analysis
+  - id: features/local
+    domain: analysis
+  - id: index/faiss
+    domain: analysis
+  - id: index/hash_index
+    domain: analysis
+  - id: analysis/retrieval
+    domain: analysis
+  - id: analysis/geometry
+    domain: analysis
+  - id: analysis/forensics
+    domain: analysis
+  - id: analysis/evidence
+    domain: analysis
+  - id: review/report
+    domain: review
+  - id: review/annotation
+    domain: review
+  - id: app/cli
+    domain: review
+  - id: app/ui
+    domain: review
+  - id: quality/evaluation
+    domain: quality
+  - id: quality/module_checks
+    domain: quality
+
+milestones:
+  - id: m0-spec
+    name: Spec baseline
+  - id: m1-corpus
+    name: Corpus truth and local storage
+  - id: m2-extraction
+    name: PDF figure and panel extraction
+  - id: m3-features
+    name: Features and indexes
+  - id: m4-similarity
+    name: Similarity retrieval and geometric verification
+  - id: m5-forensics
+    name: Forensic analysis
+  - id: m6-review
+    name: Review report and UI
+  - id: m7-quality
+    name: Evaluation and hardening
+
+features:
+  - id: spec-module-discipline
+    name: Module discipline and catalog
+    module: quality/module_checks
+    milestone: m0-spec
+  - id: spec-roadmap-slices
+    name: Roadmap and implementation slices
+    module: quality/module_checks
+    milestone: m0-spec
+  - id: corpus-protocol
+    name: Corpus protocol and records
+    module: core/corpus
+    milestone: m1-corpus
+  - id: corpus-sqlite-store
+    name: SQLite corpus store
+    module: core/corpus
+    milestone: m1-corpus
+  - id: storage-filesystem
+    name: Filesystem artifact store
+    module: core/storage
+    milestone: m1-corpus
+  - id: jobs-lifecycle
+    name: Job lifecycle store
+    module: core/jobs
+    milestone: m1-corpus
+  - id: pdf-extractor-protocol
+    name: PDF extractor protocol
+    module: extract/pdf
+    milestone: m2-extraction
+  - id: pdf-pdffigures-adapter
+    name: PDFFigures adapter
+    module: extract/pdf
+    milestone: m2-extraction
+  - id: pdf-pymupdf-fallback
+    name: PyMuPDF fallback
+    module: extract/pdf
+    milestone: m2-extraction
+  - id: panel-detector-protocol
+    name: Panel detector protocol
+    module: extract/panel
+    milestone: m2-extraction
+  - id: panel-detector-adapter
+    name: Real panel detector adapter
+    module: extract/panel
+    milestone: m2-extraction
+  - id: hash-feature-extractor
+    name: pHash feature extractor
+    module: features/hash
+    milestone: m3-features
+  - id: embedding-protocol
+    name: Embedding protocol and fake extractor
+    module: features/embedding
+    milestone: m3-features
+  - id: embedding-real-adapter
+    name: CLIP or SigLIP adapter
+    module: features/embedding
+    milestone: m3-features
+  - id: faiss-flat-index
+    name: FAISS Flat index
+    module: index/faiss
+    milestone: m3-features
+  - id: hash-index
+    name: Hash near-duplicate index
+    module: index/hash_index
+    milestone: m3-features
+  - id: candidate-retrieval
+    name: Candidate retrieval
+    module: analysis/retrieval
+    milestone: m4-similarity
+  - id: geometry-protocol
+    name: Geometry verifier protocol
+    module: analysis/geometry
+    milestone: m4-similarity
+  - id: geometry-opencv-adapter
+    name: OpenCV geometry verifier
+    module: analysis/geometry
+    milestone: m4-similarity
+  - id: similarity-evidence
+    name: Similarity evidence merger
+    module: analysis/evidence
+    milestone: m4-similarity
+  - id: forensic-protocol
+    name: Forensic protocol and fake analyzer
+    module: analysis/forensics
+    milestone: m5-forensics
+  - id: trufor-adapter
+    name: TruFor adapter
+    module: analysis/forensics
+    milestone: m5-forensics
+  - id: forensic-evidence
+    name: Forensic evidence merger
+    module: analysis/evidence
+    milestone: m5-forensics
+  - id: report-model
+    name: Report data model
+    module: review/report
+    milestone: m6-review
+  - id: html-report
+    name: HTML report renderer
+    module: review/report
+    milestone: m6-review
+  - id: review-annotation
+    name: Human review annotations
+    module: review/annotation
+    milestone: m6-review
+  - id: streamlit-viewer
+    name: Streamlit report viewer
+    module: app/ui
+    milestone: m6-review
+  - id: gold-fixtures
+    name: Gold fixture corpus
+    module: quality/evaluation
+    milestone: m7-quality
+  - id: similarity-smoke-metrics
+    name: Similarity smoke metrics
+    module: quality/evaluation
+    milestone: m7-quality
+  - id: ai-gateway-protocol
+    name: LLM gateway protocol and fake responder
+    module: core/ai
+    milestone: m2-extraction
+  - id: ai-audit-model
+    name: AI call audit model and privacy filter
+    module: core/ai
+    milestone: m2-extraction
+  - id: ai-report-adapter
+    name: LLM report writing adapter
+    module: core/ai
+    milestone: m6-review
+  - id: ai-consultation-protocol
+    name: AI consultation protocol and quota tracking
+    module: core/ai
+    milestone: m6-review
+  - id: module-boundary-checks
+    name: Module boundary checks
+    module: quality/module_checks
+    milestone: m7-quality
