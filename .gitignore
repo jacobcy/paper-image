@@ -9,5 +9,8 @@ dist/
 build/
 .DS_Store
 
+# IDE settings
+.claude/
+
 # PDF documents
 *.pdf
