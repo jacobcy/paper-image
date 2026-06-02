@@ -1,0 +1,50 @@
+# Vibe3 项目配置
+# 继承全局配置 ~/.vibe/config/v3/settings.yaml
+# 此处仅覆盖项目特定配置
+
+# Orchestra 配置
+orchestra:
+  # 任务场景基准分支
+  # 创建新 flow/scene 时基于此分支创建 worktree
+  scene_base_ref: "origin/main"
+
+  # Manager dispatch 配置（必需）
+  assignee_dispatch:
+    enabled: true
+    use_worktree: true
+    agent: "vibe-manager"  # 使用 vibe-manager preset
+
+  # Governance 配置
+  governance:
+    enabled: true
+    interval_ticks: 4
+    agent: "vibe-governance"
+
+  # Supervisor handoff 配置
+  supervisor_handoff:
+    enabled: true
+    agent: "vibe-supervisor"
+
+# Run command 配置
+run:
+  agent_config:
+    agent: "vibe-executor"
+    backend: "opencode"
+    model: "alibaba-coding-plan-cn/glm-5"
+    timeout_seconds: 3600
+
+# Plan command 配置
+plan:
+  agent_config:
+    agent: "vibe-planner"
+    backend: "codex"
+    model: "gpt-5.4"
+    timeout_seconds: 3600
+
+# Review command 配置
+review:
+  agent_config:
+    agent: "vibe-reviewer"
+    backend: "claude"
+    model: "claude-sonnet-4-5"
+    timeout_seconds: 3600

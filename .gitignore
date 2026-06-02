@@ -15,6 +15,7 @@ build/
 
 # PDF documents
 *.pdf
+.worktrees/
 
 # Frontend
 frontend/node_modules/
@@ -24,6 +25,10 @@ frontend/.env.local
 # Temporary files
 temp/
 tmp/
+
+# Agent working directories
+.agent/plans/
+.agent/reports/
 
 # Environment variables
 .env
